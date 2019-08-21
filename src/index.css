@@ -1,0 +1,90 @@
+body,
+html {
+  height: 100%;
+  margin: 0;
+  background-image: linear-gradient(
+    300deg,
+    #9fb8ad 10%,
+    #1fc8db 41%,
+    #2cb5e8 55%
+  );
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+div.parent {
+  position: absolute;
+  left: 20%;
+  top: 20%;
+  max-width: 850px;
+  background-image: linear-gradient(
+    to right,
+    rgba(255, 0, 0, 0),
+    rgba(255, 0, 0, 1)
+  );
+  background-size: contain;
+  box-shadow: 5px 5px 10px 2px;
+  border-radius: 20px;
+}
+
+form.form {
+  display: flex;
+  justify-content: space-evenly;
+  padding: 10px;
+}
+
+form.form input {
+  padding: 10px;
+  border-radius: 5px;
+  border-style: hidden;
+}
+
+span {
+  color: aqua;
+}
+
+div.beforeGrow {
+  height: 0;
+  transition: 1s;
+}
+
+div.growClass {
+  height: 200px;
+}
+
+
+/* For Tablet view */
+@media (max-width: 1050px) {
+
+  div.parent {
+    position: absolute;
+    left: 5%;
+    top: 20%;
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+
+  form.form {
+    flex-direction: column;
+  }
+
+}
+
+/* For Mobile view */
+@media (max-width: 900px) {
+
+  div.parent {
+    position: absolute;
+    left: 0;
+    top: 20%;
+    display: block;
+    width: 100%;
+    margin: auto;
+  }
+
+  form.form {
+    flex-direction: column;
+  }
+
+}
