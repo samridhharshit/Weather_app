@@ -13,11 +13,9 @@ class Formclass extends React.Component {
           <FormGroup>
             <input type="text" name="country" placeholder="Country" />
           </FormGroup>
-          <FormGroup>
             <Button outline color="info" type="submit">
               <span> Get Weather...</span>
             </Button>
-          </FormGroup>
         </Form>
       </div>
     );

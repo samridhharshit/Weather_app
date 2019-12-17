@@ -14,8 +14,9 @@ class Weather extends React.Component {
 
     return (
       <div className={`${this.props.className} container-fluid`} id={`${id}`} >
+        <div className="row" style={{width : "inherit"}}>
         {typeof data.main == "object" ? (
-          <div className="details">
+          <div className="details col-sm-6">
             <p>Temp: {data.main.temp}</p>
             <p>Max-Temp: {data.main.temp_max}</p>
             <p>Min-Temp: {data.main.temp_min}</p>
@@ -23,10 +24,11 @@ class Weather extends React.Component {
           </div>
         ) : null}
         {typeof data.weather == "object" ? (
-          <div className="details">
+          <div className="details col-sm-6">
             <p>Description: {data.weather[0].description}</p>
           </div>
         ) : null}
+        </div>
       </div>
     );
   }

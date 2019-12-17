@@ -1,7 +1,7 @@
 import React from "react";
 
 import Weather from "./Weather";
-import Header from "./Header";
+// import Header from "./Header";
 import FormClass from "./Form";
 
 const openWeather_api_key = "db886590ee07708c8bd6553bb85c7905";
@@ -23,6 +23,7 @@ class Parent extends React.Component {
     )
       .then(res => res.json())
       .then(data => {
+          this.props.LatLon(data.coord.lon, data.coord.lat);
         console.log(data.coord);
         this.setState({ data });
       })
@@ -38,7 +39,7 @@ class Parent extends React.Component {
   render() {
     return (
       <div className="container-fluid parent">
-        <Header />
+        {/* <Header /> */}
         <FormClass GetWeather={this.getweather} />
         <Weather data={this.state.data} className={this.state.className} />
       </div>

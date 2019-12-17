@@ -1,4 +1,5 @@
-html, body {
+html,
+body {
   height: 100%;
   margin: 0;
   padding: 0;
@@ -9,21 +10,20 @@ html, body {
   width: 100%;
 }
 
-div.parent {
-  position: absolute;
-  left: 30%;
-  top: 20%;
-  max-width: 850px;
-  /* background: black; */
-  background-size: contain;
-  box-shadow: 5px 5px 10px 2px;
-  border-radius: 20px;
-}
-
 form.form {
+  margin-top: 1%;
   display: flex;
   justify-content: space-evenly;
   padding: 10px;
+  border: 1px solid aqua;
+  border-radius: 10px;
+}
+
+div.form-group {
+  border: 1px solid yellowgreen;
+  border-radius: 10px;
+  margin-top: 8px;
+  margin-bottom: 8px;
 }
 
 form.form input {
@@ -42,13 +42,20 @@ div.beforeGrow {
 }
 
 div.growClass {
-  height: 200px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  height: max-content;
 }
 
+div.details {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+}
 
 /* For Tablet view */
 @media (max-width: 1050px) {
-
   div.parent {
     position: absolute;
     left: 5%;
@@ -61,12 +68,10 @@ div.growClass {
   form.form {
     flex-direction: column;
   }
-
 }
 
 /* For Mobile view */
 @media (max-width: 900pxz) {
-
   div.parent {
     position: absolute;
     left: 0;
@@ -79,5 +84,4 @@ div.growClass {
   form.form {
     flex-direction: column;
   }
-
 }

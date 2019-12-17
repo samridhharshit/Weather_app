@@ -4,6 +4,11 @@ import "./App.css";
 import Parent from "./components/parent";
 
 class App extends React.Component {
+  state = {
+    lat: null,
+    lon: null
+  };
+
   componentDidMount() {
     this.renderMap();
   }
@@ -15,17 +20,27 @@ class App extends React.Component {
     window.initMap = this.initMap;
   };
 
-  initMap = () => {
-    new window.google.maps.Map(document.getElementById("map"), {
-      center: { lat: 25.61, lng: 85.12 },
-      zoom: 3
-    });
+  initMap = async (lat, lon) => {
+    await this.setState({ lat, lon });
+    if (this.state.lat && this.state.lon) {
+      const center = { lat: this.state.lon, lng: this.state.lat };
+      console.log(center);
+      new window.google.maps.Map(document.getElementById("map"), {
+        center: center,
+        zoom: 3
+      });
+    } else {
+      new window.google.maps.Map(document.getElementById("map"), {
+        center: { lat: 12.972442, lng: 77.580643 },
+        zoom: 3
+      });
+    }
   };
 
   render() {
     return (
       <div className="App">
-        <Parent />
+        <Parent LatLon={this.initMap} />
         <div id="map"></div>
       </div>
     );
