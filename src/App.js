@@ -1,45 +1,46 @@
 import React from "react";
+import "./App.css";
 
-import Weather from "./components/Weather";
-import Header from "./components/Header";
-import FormClass from "./components/Form";
-
-const api_key = "db886590ee07708c8bd6553bb85c7905";
+import Parent from "./components/parent";
 
 class App extends React.Component {
-  state = {
-    data: {},
-    className: "beforeGrow"
+  componentDidMount() {
+    this.renderMap();
+  }
+
+  renderMap = () => {
+    ScriptLoader(
+      "https://maps.googleapis.com/maps/api/js?key=AIzaSyA8GSuIxqROHt1SCKh0KTDaIMO-g3l_8Y4&callback=initMap"
+    );
+    window.initMap = this.initMap;
   };
 
-  getweather = async event => {
-    event.preventDefault();
-
-    const city = event.target.elements.city.value;
-    const country = event.target.elements.country.value;
-
-    const api_call = await fetch(
-      `https://api.openweathermap.org/data/2.5/weather?q=${city},${country}&appid=${api_key}&units=metric`
-    );
-
-    const data = await api_call.json();
-    this.setState({ data });
-
-    var d = document.getElementById("weatherid");
-    d.className += " growClass";
-    this.setState({className: d.className});
-
+  initMap = () => {
+    new window.google.maps.Map(document.getElementById("map"), {
+      center: { lat: -34.397, lng: 150.644 },
+      zoom: 8
+    });
   };
 
   render() {
     return (
-      <div className="container-fluid parent">
-        <Header />
-        <FormClass GetWeather={this.getweather} />
-        <Weather data={this.state.data} className={this.state.className} />
+      <div className="App">
+        <Parent />
+        <div id="map"></div>
       </div>
     );
   }
 }
+
+function ScriptLoader(url) {
+  var index = window.document.getElementsByTagName("script")[0];
+  var script = window.document.createElement("script");
+  script.src = url;
+  script.async = true;
+  script.defer = true;
+  index.parentNode.insertBefore(script, index);
+}
+// the above function will create a cdn for google map as normally done in plain html just like :-
+// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 export default App;

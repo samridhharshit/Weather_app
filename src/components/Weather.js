@@ -5,9 +5,9 @@ const id = "weatherid"
 class Weather extends React.Component {
   render() {
     const data = { ...this.props.data };
-    if (typeof data.weather == "object") {
-      console.log(data.weather[0].description);
-    }
+    // if (typeof data.weather == "object") {
+    //   console.log(data.weather[0].description);
+    // }
 
     // var d = document.getElementById(id);
     // d.className += "otherClass"
