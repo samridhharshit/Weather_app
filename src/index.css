@@ -11,14 +11,10 @@ html, body {
 
 div.parent {
   position: absolute;
-  left: 20%;
+  left: 30%;
   top: 20%;
   max-width: 850px;
-  background-image: linear-gradient(
-    to right,
-    rgba(255, 0, 0, 0),
-    rgba(255, 0, 0, 1)
-  );
+  /* background: black; */
   background-size: contain;
   box-shadow: 5px 5px 10px 2px;
   border-radius: 20px;

@@ -23,7 +23,7 @@ class Parent extends React.Component {
     )
       .then(res => res.json())
       .then(data => {
-        console.log(data.coord.lon);
+        console.log(data.coord);
         this.setState({ data });
       })
       .catch(err => console.log(err));

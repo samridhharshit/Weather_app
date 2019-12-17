@@ -1,11 +1,13 @@
 .App {
-  background-color: green ;
+  /* background-color: green ; */
   text-align: center;
   height: 100%;
   width: 100%;
 }
 
 #map {
+  /* top: 50vh; */
   height: 100vh;
+  z-index: -10;
 }
 
