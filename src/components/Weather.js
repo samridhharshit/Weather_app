@@ -14,7 +14,7 @@ class Weather extends React.Component {
 
     return (
       <div className={`${this.props.className} container-fluid`} id={`${id}`} >
-        <div className="row" style={{width : "inherit"}}>
+        <div className="row" style={{width: "inherit", border: "1px solid aqua"}}>
         {typeof data.main == "object" ? (
           <div className="details col-sm-6">
             <p>Temp: {data.main.temp}</p>

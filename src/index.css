@@ -3,11 +3,28 @@ body {
   height: 100%;
   margin: 0;
   padding: 0;
+  overflow: hidden;
 }
 
 #root {
   height: 100%;
   width: 100%;
+}
+
+.parent {
+  position: fixed;
+  top: 40%;
+  z-index: 1;
+  /* border-bottom: 1px solid beige; */
+  transition: 3s;
+}
+
+.form-container {
+  width: 50%;
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
 }
 
 form.form {
@@ -30,22 +47,36 @@ form.form input {
   padding: 10px;
   border-radius: 5px;
   border-style: hidden;
+  width: -webkit-fill-available;
 }
 
 span {
-  color: aqua;
+  font-weight: 600;
+}
+
+button:hover span {
+  color: aliceblue;
 }
 
 div.beforeGrow {
   height: 0;
+  /* display: none; */
   transition: 1s;
 }
 
 div.growClass {
   display: flex;
   flex-direction: row;
-  justify-content: space-between;
+  justify-content: center;
   height: max-content;
+  width: 70%;
+}
+
+.growClass > .row {
+  background-color: rgba(70, 200, 157, 0.308);
+  border: 1px solid aqua;
+  border-radius: 10px;
+  width: inherit;
 }
 
 div.details {
@@ -54,10 +85,21 @@ div.details {
   justify-content: space-evenly;
 }
 
+button {
+  background-color: cornsilk;
+}
+
+p {
+  color: aliceblue;
+}
+
+
+
+
 /* For Tablet view */
 @media (max-width: 1050px) {
   div.parent {
-    position: absolute;
+    position: fixed;
     left: 5%;
     top: 20%;
     display: block;
@@ -68,20 +110,34 @@ div.details {
   form.form {
     flex-direction: column;
   }
+
+  div.details {
+    flex-direction: column;
+  }
 }
 
 /* For Mobile view */
 @media (max-width: 900pxz) {
+
+  body {
+    overflow: hidden;
+  }
+
   div.parent {
-    position: absolute;
+    position: relative;
     left: 0;
     top: 20%;
-    display: block;
+    display: flex;
+    flex-direction: column;
     width: 100%;
     margin: auto;
   }
 
   form.form {
+    flex-direction: column;
+  }
+
+  div.details {
     flex-direction: column;
   }
 }
