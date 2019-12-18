@@ -73,7 +73,7 @@ div.growClass {
 }
 
 .growClass > .row {
-  background-color: rgba(70, 200, 157, 0.308);
+  background-color: rgba(14, 14, 14, 0.308);
   border: 1px solid aqua;
   border-radius: 10px;
   width: inherit;

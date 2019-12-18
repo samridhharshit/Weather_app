@@ -14,10 +14,7 @@ class App extends React.Component {
   }
 
   renderMap = () => {
-    ScriptLoader(
-      "https://maps.googleapis.com/maps/api/js?key=AIzaSyA8GSuIxqROHt1SCKh0KTDaIMO-g3l_8Y4&callback=initMap"
-    );
-    window.initMap = this.initMap;
+    this.initMap();
   };
 
   initMap = async (lat, lon) => {
@@ -60,15 +57,5 @@ class App extends React.Component {
   }
 }
 
-function ScriptLoader(url) {
-  var index = window.document.getElementsByTagName("script")[0];
-  var script = window.document.createElement("script");
-  script.src = url;
-  script.async = true;
-  script.defer = true;
-  index.parentNode.insertBefore(script, index);
-}
-// the above function will create a cdn for google map as normally done in plain html just like :-
-// <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
 
 export default App;
