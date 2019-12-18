@@ -13,7 +13,7 @@ body {
 
 .parent {
   position: fixed;
-  top: 40%;
+  top: 20%;
   z-index: 1;
   /* border-bottom: 1px solid beige; */
   transition: 3s;
@@ -91,6 +91,8 @@ button {
 
 p {
   color: aliceblue;
+  padding: 2px 5px 0 2px;
+  margin-bottom: 0.5rem;
 }
 
 
