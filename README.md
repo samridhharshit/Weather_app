@@ -3,10 +3,10 @@
 An easy to use weather app that would show the weather condition as well mark the place you searched for any place around the world just by searching the city by its name. If you forgot the full name of the city, no need to worry as the the app would automatically start suggesting you similar names to the place you are searching for.
 
 #### This project is made using: 
-React, reactstrap and react-bootstarp for frontend , 
-Google places api for automatic places suggestions ,
-Google maps api showing and marking the searched place on the map, and
-openweathermap api for displaying all the weather details of the place searched by the user
+1. React, reactstrap and react-bootstarp for frontend
+2. Google places api for automatic places suggestions
+3. Google maps api showing and marking the searched place on the map
+4. openweathermap api for displaying all the weather details of the place searched by the user
 
 ### A working GIF of the app
 
