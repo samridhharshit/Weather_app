@@ -13,7 +13,6 @@ class App extends React.Component {
 
   componentDidMount() {
     this.renderMap();
-    // loadscript(`https://maps.googleapis.com/maps/api/js?key=AIzaSyAeU5A0CyPpl1i80xsQQ1oHwcAutLTacF4&callback=initMap&libraries=places&fields=city,country`)
   }
 
   renderMap = () => {
