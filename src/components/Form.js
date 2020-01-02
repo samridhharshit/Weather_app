@@ -11,9 +11,7 @@ class Formclass extends React.Component {
 
   // autocomplete functionality
   handleChange = address => {
-    this.setState({ address }, () => {
-      console.log(this.state.address);
-    });
+    this.setState({ address });
   };
 
   handleSelect = address => {
